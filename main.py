@@ -3,8 +3,7 @@ import random
 words = open("sgb-words.txt", "r")
 word_list = list(words)
 print(word_list)
-#target_word = random.choices(word_list)
-target_word = "spore"
+target_word = str(random.choices(word_list)).strip()
 guess_limit = 6
 guess_counter = 0
 guess = ""
@@ -22,7 +21,7 @@ def check_guess_contains(guess, target_word):
     contained_letters = ""
     for i in range(len(guess)):
         if guess[i] in target_word:
-            contained_letters = contained_letters + guess[i] + " spare"
+            contained_letters = contained_letters + guess[i]
         else:
             contained_letters = contained_letters
     return contained_letters
