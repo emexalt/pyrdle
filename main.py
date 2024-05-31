@@ -12,7 +12,7 @@ guess = ""
 def check_guess_matches(guess, target_word):
     matches = ""
     for i in range(len(guess)):
-        if guess[i] = target_word[i]:
+        if guess[i] == target_word[i]:
             matches = matches + guess[i]
         else:
             matches = matches + "X"
