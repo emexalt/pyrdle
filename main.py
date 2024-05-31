@@ -19,10 +19,10 @@ def check_guess_matches(guess, target_word):
     return matches
 
 def check_guess_contains(guess, target_word):
-    contained_letters = []
+    contained_letters = ""
     for i in range(len(guess)):
         if guess[i] in target_word:
-            contained_letters = contained_letters + guess[i]
+            contained_letters = contained_letters + guess[i] + " spare"
         else:
             contained_letters = contained_letters
     return contained_letters
@@ -37,4 +37,8 @@ while guess != target_word and guess_counter <= guess_limit:
         print("Guessed correctly!")
     else:
         print("Guessed incorrectly")
+        matches = check_guess_matches(guess, target_word)
+        contained_letters = check_guess_contains(guess, target_word)
+        print(matches)
+        print("Guess contains: " + str(contained_letters))
 
